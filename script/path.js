@@ -3,15 +3,15 @@ var Path = {
 	_STORES_OFFSET: 0,
 	// Everything not in this list weighs 1
 	Weight: {
-		'bone spear': 2,
-		'iron sword': 3,
-		'steel sword': 5,
-		'rifle': 5,
+		'bone spear': 0,
+		'iron sword': 0,
+		'steel sword': 0,
+		'rifle': 10,
 		'bullets': 0.1,
-		'energy cell': 0.2,
-		'laser rifle': 5,
-    'plasma rifle': 5,
-		'bolas': 0.5,
+		'energy cell': 0,
+		'laser rifle': 0,
+    'plasma rifle': 0,
+		'bolas': 0,
 	},
 		
 	name: 'Path',
