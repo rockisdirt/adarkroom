@@ -71,11 +71,11 @@ var Path = {
 	
 	getCapacity: function() {
 		if($SM.get('stores["cargo drone"]', true) > 0) {
-			return Path.DEFAULT_BAG_SPACE + 100;
+			return Path.DEFAULT_BAG_SPACE + 100000000;
 		} else if($SM.get('stores.convoy', true) > 0) {
-			return Path.DEFAULT_BAG_SPACE + 60;
+			return Path.DEFAULT_BAG_SPACE + 100000000;
 		} else if($SM.get('stores.wagon', true) > 0) {
-			return Path.DEFAULT_BAG_SPACE + 30;
+			return Path.DEFAULT_BAG_SPACE + 10000;
 		} else if($SM.get('stores.rucksack', true) > 0) {
 			return Path.DEFAULT_BAG_SPACE + 100;
 		}
