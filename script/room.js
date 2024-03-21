@@ -43,7 +43,7 @@ var Room = {
 		'hut': {
 			name: _('hut'),
 			button: null,
-			maximum: 20,
+			maximum: 100,
 			availableMsg: _("builder says there are more wanderers. says they'll work, too."),
 			buildMsg: _('builder puts up a hut, out in the forest. says word will get around.'),
 			maxMsg: _('no more room for huts.'),
@@ -51,7 +51,7 @@ var Room = {
 			cost: function () {
 				var n = $SM.get('game.buildings["hut"]', true);
 				return {
-					'wood': 100 + (n * 50)
+					'wood': 0 + (n * 0)
 				};
 			},
 			audio: AudioLibrary.BUILD_HUT
@@ -415,7 +415,7 @@ var Room = {
 			type: 'good',
 			cost: function () {
 				return {
-					'scales': 10
+					'scales': 0
 				};
 			},
 			audio: AudioLibrary.BUY_BULLETS
