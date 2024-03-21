@@ -25,15 +25,15 @@ var World = {
   TILE_PROBS: {},
   LANDMARKS: {},
   STICKINESS: 0.5, // 0 <= x <= 1
-  LIGHT_RADIUS: 2,
+  LIGHT_RADIUS: 10,
   BASE_WATER: 10,
-  MOVES_PER_FOOD: 2,
-  MOVES_PER_WATER: 1,
-  DEATH_COOLDOWN: 120,
+  MOVES_PER_FOOD: 10,
+  MOVES_PER_WATER: 10,
+  DEATH_COOLDOWN: 0,
   FIGHT_CHANCE: 0.20,
   BASE_HEALTH: 10,
   BASE_HIT_CHANCE: 0.8,
-  MEAT_HEAL: 8,
+  MEAT_HEAL: 100,
   MEDS_HEAL: 20,
   HYPO_HEAL: 30,
   FIGHT_DELAY: 3, // At least three moves between fights
@@ -46,19 +46,19 @@ var World = {
     'fists': {
       verb: _('punch'),
       type: 'unarmed',
-      damage: 1,
+      damage: 100,
       cooldown: 2
     },
     'bone spear': {
       verb: _('stab'),
       type: 'melee',
-      damage: 2,
-      cooldown: 2
+      damage: 1,
+      cooldown: 0
     },
     'iron sword': {
       verb: _('swing'),
       type: 'melee',
-      damage: 4,
+      damage: 10,
       cooldown: 2
     },
     'steel sword': {
@@ -70,27 +70,27 @@ var World = {
     'bayonet': {
       verb: _('thrust'),
       type: 'melee',
-      damage: 8,
+      damage: 50,
       cooldown: 2
     },
     'rifle': {
       verb: _('shoot'),
       type: 'ranged',
-      damage: 5,
-      cooldown: 1,
+      damage: 10000000,
+      cooldown: 0,
       cost: { 'bullets': 1 }
     },
     'laser rifle': {
       verb: _('blast'),
       type: 'ranged',
-      damage: 8,
+      damage: 100,
       cooldown: 1,
       cost: { 'energy cell': 1 }
     },
     'grenade': {
       verb: _('lob'),
       type: 'ranged',
-      damage: 15,
+      damage: 9999,
       cooldown: 5,
       cost: { 'grenade': 1 }
     },
@@ -98,8 +98,8 @@ var World = {
       verb: _('tangle'),
       type: 'ranged',
       damage: 'stun',
-      cooldown: 15,
-      cost: { 'bolas': 1 }
+      cooldown: 0,
+      cost: { 'bolas': 0 }
     },
     'plasma rifle': {
       verb: _('disintigrate'),
@@ -147,7 +147,7 @@ var World = {
     World.LANDMARKS[World.TILE.SHIP] = { num: 1, minRadius: 28, maxRadius: 28, scene: 'ship', label:  _('A&nbsp;Crashed&nbsp;Starship')};
     World.LANDMARKS[World.TILE.BOREHOLE] = { num: 10, minRadius: 15, maxRadius: World.RADIUS * 1.5, scene: 'borehole', label:  _('A&nbsp;Borehole')};
     World.LANDMARKS[World.TILE.BATTLEFIELD] = { num: 5, minRadius: 18, maxRadius: World.RADIUS * 1.5, scene: 'battlefield', label:  _('A&nbsp;Battlefield')};
-    World.LANDMARKS[World.TILE.SWAMP] = { num: 1, minRadius: 15, maxRadius: World.RADIUS * 1.5, scene: 'swamp', label:  _('A&nbsp;Murky&nbsp;Swamp')};
+    World.LANDMARKS[World.TILE.SWAMP] = { num: 10, minRadius: 15, maxRadius: World.RADIUS * 1.5, scene: 'swamp', label:  _('A&nbsp;Murky&nbsp;Swamp')};
     World.LANDMARKS[World.TILE.EXECUTIONER] = { num: 1, minRadius: 28, maxRadius: 28, scene: 'executioner', 'label': _('A&nbsp;Ravaged&nbsp;Battleship')};
 
     // Only add the cache if there is prestige data
